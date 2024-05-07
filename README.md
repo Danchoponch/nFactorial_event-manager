@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+To launch this application, the user needs to install node.js on their device
+You will need to clone gihub repository of this project.
+You should then open terminal and navigate to the folder "event_manager". In this folder you cun run command "npm start" 
+This will launch this react web application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To register in this web application, click on button "Log in/Sign up" in the upper right corner of the main page. After enter your information you will be redirected to the other page where you can register fo the event. 
 
-## Available Scripts
+Here I have several problems with the implementation, currently there are 3 events and 3 users in the firebase database of this application. Logic of registering works in the way that program looks for ID of the registered user in the corresponding fields of records of events. This can cause issues because newly registered user's ID is not in the records of events and if we try accessing event/people-registered/userID, program might crash because new user will not have a corresponding entry. Also, there is currently no check for if the user has already been registered for the event, and trying to Log in (not Sign up for the first time) will cause crash in the program. 
 
-In the project directory, you can run:
+These problems can be easily avoided: dynamically creating records for users and events in database, separating logic of Sign up and Log in, checking if user is registered in the corresponding records of events. Unfortunately, I didn't have time. 
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In this project, I tried to identify "reusable" components as much as possible. For example, Overlay.js and EventCards.js. It allowed me to avoid repeating code, and added flexibility - I could change an entire component or I could introduce small changes outside of these components. 

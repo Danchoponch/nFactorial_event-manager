@@ -1,0 +1,44 @@
+.overlay-background{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 200vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.overlay-container{
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.overlay-controls{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.overlay-close{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+ 
+.overlay-content{
+  max-width: 60vh;
+}
+
+.overlay-content h3{
+  color: #F25C05;
+}
